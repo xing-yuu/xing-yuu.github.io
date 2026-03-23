@@ -31,14 +31,17 @@ portrait_url: /assets/images/photos/portrait.jpg
 #   date: Sep. 2018 - Jun. 2022
 
 experience:
-- name: Zhejiang Lab 
-  logo: /assets/images/badges/zhijiang.png
-  position: Research Intern
-  date: Jun. 2024 - Sept. 2024
-- name: Shandong University
+
+- name: Shandong University | Interdisciplinary Research Center
+  url: https://irc.cs.sdu.edu.cn
   logo: /assets/images/badges/SDU.png
   position: Ph.D candidate
   date: Sep. 2022 - now
+- name: Zhejiang Lab | Research Center for New Materials Computing
+  url: https://www.zhejianglab.org/lab/home
+  logo: /assets/images/badges/zhijiang.png
+  position: Research Intern
+  date: Jun. 2024 - Oct. 2025
 - name: Shandong University
   logo: /assets/images/badges/SDU.png
   position: B.S. in Computer Science
