@@ -10,9 +10,9 @@ pub_date:       "2021"
 cover:          /assets/images/covers/phyTexture.png
 authors:
   - Xin Yan
-  - Lin Lu
+  - "Lin Lu#"
   - Andrei Sharf
-  - Yu Xing
+  - "Yu Xing"
   - Yulu Sun
 links:
   Paper: https://dl.acm.org/doi/10.1145/3485114.3485119

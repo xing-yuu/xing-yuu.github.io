@@ -6,13 +6,13 @@ pub:            "Computers & Graphics"
 pub_date:       "2021"
 cover:          /assets/images/covers/shellthickening.jpg
 authors:
-- Yu Xing
+- "Yu Xing"
 - Yu Zhou
 - Xin Yan 
 - Haisen Zhao
 - Wenqiang Liu
 - Jingbo Jiang
-- Lin Lu
+- "Lin Lu#"
 links:
   Paper: https://www.sciencedirect.com/science/article/pii/S009784932100073X
 ---
