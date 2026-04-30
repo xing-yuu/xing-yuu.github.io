@@ -41,6 +41,7 @@
 
 {%- endfor -%}
 
+{%- if include.show_author_notes -%}
 {%- if has_eq_contrib or has_corresponding %}
 <mark>(
     {%- if has_eq_contrib -%}
@@ -51,4 +52,5 @@
         <sup>#</sup> <i> corresponding author</i>
     {%- endif -%}
 )</mark>
+{%- endif -%}
 {%- endif -%}

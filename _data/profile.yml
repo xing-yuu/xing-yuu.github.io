@@ -1,5 +1,5 @@
 primary_name: "Yu Xing"
-secondary_name: ""
+secondary_name: "｜星宇"
 navbar_name: "Yu Xing"
 
 positions:
@@ -15,10 +15,10 @@ github: xing-yuu
 # wechat_prompt: >-
 #   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
 # linkedin: your-linked-in-id
-# orcid: 0000-0000-0000-0000
+orcid: 0009-0009-1522-6145
 
 short_bio: >-
-  Yu Xing is currently a Ph.D candidate at the Interdisciplinary Research Center of Shandong University, under the supervision of Prof. Lin Lu. Before that, he received Bachelor's degree in 2022 from the School of Computer Science and Technology, Shandong University, under the supervision of Prof. Lin Lu.
+  I am a fourth-year Ph.D. student at the <a href="https://irc.cs.sdu.edu.cn" target="_blank">Interdisciplinary Research Center (IRC)</a> of Shandong University, under the supervision of Prof. <a href="https://irc.cs.sdu.edu.cn/~lulin/index.html" target="_blank">Lin Lu</a>. I am also fortunate to receive guidance from Dr. <a href="https://xueyuhanlang.github.io/" target="_blank">Yang Liu</a>. Before that, I received my Bachelor's degree in 2022 from the School of Computer Science and Technology, Shandong University, under the supervision of Prof. <a href="https://irc.cs.sdu.edu.cn/~lulin/index.html" target="_blank">Lin Lu</a>. My research focuses on intelligent simulation and metamaterial design, with an emphasis on the computational design and optimization of multifunctional microstructures.
 
 portrait_url: /assets/images/photos/portrait.jpg
 # portrait_caption: >-
