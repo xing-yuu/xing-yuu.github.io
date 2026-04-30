@@ -18,6 +18,6 @@ authors:
   - "Lin Lu#"
 links:
   Paper: https://arxiv.org/abs/2603.27195
-  OpenReview: https://openreview.net/forum?id=zd6V4IqBkd&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICML.cc%2F2026%2FConference%2FAuthors%23your-submissions)
+  # OpenReview: https://openreview.net/forum?id=zd6V4IqBkd&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICML.cc%2F2026%2FConference%2FAuthors%23your-submissions)
   
 ---
