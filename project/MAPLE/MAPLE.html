@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="Lattice Structure Optimization for Additive Manufacturing">
+  <meta name="description" content="A manufacturability-driven lattice optimization method for multiphysics design and progressive Pareto-front construction.">
+  <meta name="keywords" content="lattice structures, additive manufacturing, topology optimization, inverse homogenization, Pareto front, multiphysics">
+  <meta name="author" content="Yu Xing, Yang Liu, Lin Lu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Lattice Structure Optimization">
+  <meta property="og:title" content="Lattice Structure Optimization for Additive Manufacturing">
+  <meta property="og:description" content="Manufacturability-driven design and Pareto-front construction for multiphysics lattice structures.">
+  <meta property="og:image" content="static/images/metal_print.jpg">
+  <meta property="og:image:alt" content="Additively manufactured metal lattice specimen">
+  <meta property="article:author" content="Yu Xing">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Additive Manufacturing">
+  <meta property="article:tag" content="Topology Optimization">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lattice Structure Optimization for Additive Manufacturing">
+  <meta name="twitter:description" content="Manufacturability-driven design and Pareto-front construction for multiphysics lattice structures.">
+  <meta name="twitter:image" content="static/images/metal_print.jpg">
+
+  <meta name="citation_title" content="Lattice Structure Optimization for Additive Manufacturing: Manufacturability-Driven Design and Pareto Front Construction">
+  <meta name="citation_author" content="Xing, Yu">
+  <meta name="citation_author" content="Liu, Yang">
+  <meta name="citation_author" content="Lu, Lin">
+  <meta name="citation_journal_title" content="Journal of Computer-Aided Design &amp; Computer Graphics">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Lattice Structure Optimization for Additive Manufacturing</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Lattice Structure Optimization for Additive Manufacturing: Manufacturability-Driven Design and Pareto Front Construction",
+    "description": "A manufacturability-driven lattice optimization method that jointly considers multiphysics performance and additive-manufacturing constraints.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Yu Xing",
+        "affiliation": {"@type": "Organization", "name": "Shandong University"}
+      },
+      {
+        "@type": "Person",
+        "name": "Yang Liu",
+        "affiliation": {"@type": "Organization", "name": "Microsoft Research Asia"}
+      },
+      {
+        "@type": "Person",
+        "name": "Lin Lu",
+        "affiliation": {"@type": "Organization", "name": "Shandong University"}
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Journal of Computer-Aided Design & Computer Graphics"
+    },
+    "image": "static/images/pipeline.png",
+    "keywords": ["lattice structures", "additive manufacturing", "topology optimization", "inverse homogenization", "Pareto front"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Lattice Structure Optimization for Additive Manufacturing:<br>
+                Manufacturability-Driven Design and Pareto Front Construction
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Yu Xing<sup>1</sup>,</span>
+                <span class="author-block">Yang Liu<sup>2</sup>,</span>
+                <span class="author-block">Lin Lu<sup>1,*</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Shandong University</span>
+                <span class="author-block"><sup>2</sup>Microsoft Research Asia</span>
+                <span class="author-block"><br>Journal of Computer-Aided Design &amp; Computer Graphics</span>
+                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span> -->
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                      <a href="#" aria-disabled="true" class="external-link button is-normal is-rounded is-dark is-placeholder" title="Link coming soon">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper-Chinese Version</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#" aria-disabled="true" class="external-link button is-normal is-rounded is-dark is-placeholder" title="Link coming soon">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>Paper-English Version</span>
+                    </a>
+                  </span>
+        
+
+                  <span class="link-block">
+                    <a href="#" aria-disabled="true" class="external-link button is-normal is-rounded is-dark is-placeholder" title="Link coming soon">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/xing-yuu/MAPLE"
+                        target="_blank"
+                        rel="noopener"
+                        class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <div class="publication-banner teaser-image-wrap">
+            <img class="teaser-image" src="static/images/pipeline.png" alt="A metal lattice specimen fabricated using laser powder-bed fusion">
+          </div>
+          <h2 class="subtitle has-text-centered">
+            The proposed framework jointly optimizes multiphysics performance and manufacturability, producing lattice structures with connected load paths and accessible powder-removal channels.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Lattice metamaterials support lightweight and multifunctional structural design, while additive manufacturing enables the fabrication of complex lattice geometries. However, multiphysics lattice-unit-cell design for additive manufacturing remains challenging: mechanical and thermal objectives inherently conflict, and manufacturability constraints—including overhangs, enclosed cavities, and restricted powder-removal channels—substantially reduce the feasible design space. We propose a manufacturability-driven lattice optimization method that embeds differentiable manufacturing constraints into inverse-homogenization topology optimization, allowing multiphysics performance and manufacturability to be optimized jointly. We further develop a progressive Pareto-front construction mechanism. A target-performance-conditioned density generation network interpolates the latent representations of neighboring nondominated solutions and decodes them into initial density fields for optimization. Iteratively updating the network and the nondominated set progressively improves the coverage of manufacturable nondominated solutions. Experiments show that the method captures multiphysics trade-offs, substantially reduces manufacturing risks, and efficiently produces manufacturable nondominated designs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3 has-text-centered">Results</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img src="static/images/result-1.png" alt="Pareto-front comparison between random and network-guided initialization" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Optimized lattices reveal stiffness–thermal-conductivity trade-offs governed by volume fraction, with higher values strengthening solid pathways while reducing powder-removal space.
+              </h2>
+            </div>
+            <div class="item">
+              <img src="static/images/result-2.png" alt="Performance-space comparison with and without additive manufacturing constraints" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Under the same optimization budget, network initialization constructs a higher-quality nondominated front than random initialization.
+              </h2>
+            </div>
+            <div class="item">
+              <img src="static/images/result-3.png" alt="Optimization history of performance and manufacturability metrics" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Manufacturing constraints contract the attainable performance space while steering candidates toward designs that better satisfy practical additive-manufacturing requirements.
+              </h2>
+            </div>
+            <div class="item result-photo">
+              <img src="static/images/result-4.png" alt="Fabricated AlSi10Mg lattice specimen" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Manufacturing-constrained metal prints exhibit well-connected solid networks and open pore channels.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{xingTBDlattice,
+  title={Lattice Structure Optimization for Additive Manufacturing:
+         Manufacturability-Driven Design and Pareto Front Construction},
+  author={Xing, Yu and Liu, Yang and Lu, Lin},
+  journal={Journal of Computer-Aided Design \&amp; Computer Graphics},
+  year={TBD},
+  doi={TBD},
+  url={TBD}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>, which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+              You are free to borrow the source code of this website; please retain a link back to the template. <br>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
