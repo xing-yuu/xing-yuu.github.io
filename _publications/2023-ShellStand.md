@@ -16,7 +16,7 @@ authors:
   - Xiaoxuan Wang
   - "Lin Lu#"
   - Andrei Sharf
-  - Daniel Cohen-Or
+  - "Daniel Cohen-Or"
   - Changhe Tu
 links:
   Paper: https://link.springer.com/article/10.1007/s41095-024-0402-8
