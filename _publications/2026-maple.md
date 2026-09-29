@@ -12,6 +12,6 @@ authors:
   - "Lin Lu#"
 links:
   Paper: https://www.jcad.cn/article/doi/10.3724/SP.J.1089.2026-00157
-  English Version: TBD
+  English Version: https://arxiv.org/abs/2609.33598
   Project Page: https://xing-yuu.github.io/project/MAPLE/MAPLE.html
 ---
