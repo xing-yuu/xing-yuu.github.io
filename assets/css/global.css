@@ -113,13 +113,136 @@ div.lazy {
 }
 
 .experience-card h6,
+.awards-card h6,
 .publication-card > h6 {
     font-size: 1.16rem;
     letter-spacing: -0.005em;
 }
 
-.experience-card .experience-meta {
+.experience-card .experience-meta,
+.award-date {
     font-size: 0.95rem;
+}
+
+.experience-news-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+}
+
+.experience-panel,
+.experience-panel .media-body,
+.news-panel {
+    min-width: 0;
+}
+
+.experience-meta {
+    flex-wrap: wrap;
+    column-gap: 0.75rem;
+}
+
+.news-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.news-list {
+    min-height: 0;
+    max-height: 16rem;
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #aeb8c4 #f1f3f5;
+    padding-right: 0.75rem;
+}
+
+.news-list::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+
+.news-list::-webkit-scrollbar-track {
+    background: #f1f3f5;
+    border-radius: 999px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+    background: #aeb8c4;
+    border-radius: 999px;
+}
+
+/* Allow the rounded custom track in browsers with WebKit scrollbar support. */
+@supports selector(::-webkit-scrollbar) {
+    .news-list {
+        scrollbar-width: auto;
+        scrollbar-color: auto;
+    }
+}
+
+.news-list:focus-visible {
+    outline: 2px solid #80bdff;
+    outline-offset: 3px;
+}
+
+.news-item {
+    display: grid;
+    grid-template-columns: 4.8rem minmax(0, 1fr);
+    gap: 0.65rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.news-item:first-child {
+    padding-top: 0;
+}
+
+.news-item:last-child {
+    border-bottom: 0;
+}
+
+.news-date {
+    padding-top: 0.1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.news-title {
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+.news-sample {
+    display: inline-block;
+    margin-right: 0.25rem;
+    padding: 0.05rem 0.3rem;
+    border-radius: 0.2rem;
+    background: #f1f3f5;
+    color: #6c757d;
+    font-size: 0.7rem;
+    vertical-align: 0.05rem;
+}
+
+.award-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.15rem 0;
+}
+
+@media (min-width: 768px) {
+    .experience-news-grid.has-experience.has-news {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Only Experience sets the row height; News fills it and scrolls. */
+    .has-experience.has-news .news-list {
+        flex: 1 1 0;
+        height: 0;
+        max-height: none;
+    }
 }
 
 .publication-item h5 {
@@ -164,11 +287,13 @@ div.lazy {
     }
 
     .experience-card h6,
+    .awards-card h6,
     .publication-card > h6 {
         font-size: 1.04rem;
     }
 
-    .experience-card .experience-meta {
+    .experience-card .experience-meta,
+    .award-date {
         font-size: 0.9rem;
     }
 

@@ -8,16 +8,7 @@ num_selected: 1000
 
 {% include widgets/url_debug_message.html %}
 
-{% if site.data.display.homepage.show_experience %}
-{% include widgets/experience_card.html %}
-{% endif %}
-
-{% if site.data.display.homepage.show_news %}
-{% assign count_news = site.news | size %}
-{% if count_news > 0 %}
-{% include widgets/news_card.html %}
-{% endif %}
-{% endif %}
+{% include widgets/experience_news_card.html %}
 
 {% if site.data.display.homepage.show_publications %}
 <!-- {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %} -->
@@ -28,3 +19,5 @@ num_selected: 1000
     title='<i class="fas fa-star"></i> Publications'
 %}
 {% endif %}
+
+{% include widgets/awards_card.html %}

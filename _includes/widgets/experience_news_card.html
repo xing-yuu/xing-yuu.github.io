@@ -1,0 +1,26 @@
+{% assign show_experience = false %}
+{% if site.data.display.homepage.show_experience %}
+    {% if site.data.profile.experience or site.data.profile.education %}
+        {% assign show_experience = true %}
+    {% endif %}
+{% endif %}
+{% assign show_news = false %}
+{% assign count_news = site.news | size %}
+{% if site.data.display.homepage.show_news and count_news > 0 %}
+    {% assign show_news = true %}
+{% endif %}
+
+{% if show_experience or show_news %}
+<div class="experience-card card border-0 shadow-sm bg-white mt-3">
+    <div class="card-body p-4">
+        <div class="experience-news-grid mx-2 my-1{% if show_experience %} has-experience{% endif %}{% if show_news %} has-news{% endif %}">
+            {% if show_experience %}
+                {% include widgets/experience_card.html %}
+            {% endif %}
+            {% if show_news %}
+                {% include widgets/news_card.html %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
