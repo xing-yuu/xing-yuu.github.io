@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+    <!-- Refresh the stylesheet cache after each deployment. -->
+    <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body class="bg-light" {{ page.body_attr }}>
     {% include navbar.html %}

@@ -48,8 +48,8 @@ experience:
   date: Sep. 2018 - Jun. 2022
 
 awards:
-- name: National Scholarship, Chinese Education Department (国家奖学金)
-  date: 2026
+# - name: National Scholarship, Chinese Education Department (国家奖学金)
+#   date: 2026
 - name: Excellent Graduates, Shandong Provinces, Shandong University (山东省优秀毕业生, 山东大学优秀毕业生)
   date: 2022
 - name: Outstanding bachelor graduation thesis (山东大学本科优秀毕业论文)
