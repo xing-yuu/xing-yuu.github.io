@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="面向增材制造的晶格结构优化">
+  <meta name="description" content="一种面向可制造性的多物理场晶格设计与渐进式帕累托前沿构建方法。">
+  <meta name="keywords" content="晶格结构, 增材制造, 拓扑优化, 逆均匀化, 帕累托前沿, 多物理场">
+  <meta name="author" content="Yu Xing, Yang Liu, Lin Lu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Chinese">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="晶格结构优化">
+  <meta property="og:title" content="面向增材制造的晶格结构优化">
+  <meta property="og:description" content="面向可制造性的多物理场晶格设计与帕累托前沿构建。">
+  <meta property="og:image" content="static/images/pipeline-ZH.png">
+  <meta property="og:image:alt" content="增材制造金属晶格试样">
+  <meta property="article:author" content="Yu Xing">
+  <meta property="article:section" content="科研">
+  <meta property="article:tag" content="增材制造">
+  <meta property="article:tag" content="拓扑优化">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="面向增材制造的晶格结构优化">
+  <meta name="twitter:description" content="面向可制造性的多物理场晶格设计与帕累托前沿构建。">
+  <meta name="twitter:image" content="static/images/pipeline-ZH.png">
+
+  <meta name="citation_title" content="Lattice Structure Optimization for Additive Manufacturing: Manufacturability-Driven Design and Pareto Front Construction">
+  <meta name="citation_author" content="Xing, Yu">
+  <meta name="citation_author" content="Liu, Yang">
+  <meta name="citation_author" content="Lu, Lin">
+  <meta name="citation_journal_title" content="Journal of Computer-Aided Design &amp; Computer Graphics">
+  <meta name="citation_doi" content="10.3724/SP.J.1089.2026-00157">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>面向增材制造的晶格结构优化</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "面向增材制造的晶格结构优化：面向可制造性的设计与帕累托前沿构建",
+    "description": "一种联合考虑多物理场性能与增材制造约束的面向可制造性晶格优化方法。",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Yu Xing",
+        "affiliation": {"@type": "Organization", "name": "Shandong University"}
+      },
+      {
+        "@type": "Person",
+        "name": "Yang Liu",
+        "affiliation": {"@type": "Organization", "name": "Microsoft Research Asia"}
+      },
+      {
+        "@type": "Person",
+        "name": "Lin Lu",
+        "affiliation": {"@type": "Organization", "name": "Shandong University"}
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Journal of Computer-Aided Design & Computer Graphics"
+    },
+    "image": "static/images/pipeline-ZH.png",
+    "keywords": ["晶格结构", "增材制造", "拓扑优化", "逆均匀化", "帕累托前沿"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="返回顶部" aria-label="返回顶部">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                面向增材制造的晶格结构优化：<br>
+                面向可制造性的设计与帕累托前沿构建
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Yu Xing<sup>1</sup>,</span>
+                <span class="author-block">Yang Liu<sup>2</sup>,</span>
+                <span class="author-block">Lin Lu<sup>1,*</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>山东大学</span>
+                <span class="author-block"><sup>2</sup>微软亚洲研究院</span>
+                <span class="author-block"><br>《计算机辅助设计与图形学学报》</span>
+                <span class="author-block"><br>DOI：<a href="https://www.jcad.cn/article/doi/10.3724/SP.J.1089.2026-00157" target="_blank" rel="noopener">10.3724/SP.J.1089.2026-00157</a></span>
+                <span class="author-block"><br>数据集 DOI：<a href="https://doi.org/10.57760/sciencedb.j00188.00079" target="_blank" rel="noopener">10.57760/sciencedb.j00188.00079</a></span>
+                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span> -->
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                      <a href="https://www.jcad.cn/article/doi/10.3724/SP.J.1089.2026-00157" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark" title="打开已发表的中文论文">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>中文论文</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2609.33598" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark" title="打开英文 arXiv 版本">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>英文论文</span>
+                    </a>
+                  </span>
+        
+
+                  <span class="link-block">
+                    <a href="https://doi.org/10.57760/sciencedb.j00188.00079" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark" title="打开数据集 DOI">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>数据集</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/xing-yuu/MAPLE"
+                        target="_blank"
+                        rel="noopener"
+                        class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>代码</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="./MAPLE.html" hreflang="en" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-language"></i></span>
+                      <span>英文页面</span>
+                    </a>
+                  </span>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <div class="publication-banner teaser-image-wrap">
+            <img class="teaser-image" src="static/images/pipeline-ZH.png" alt="采用激光粉末床熔融制造的金属晶格试样">
+          </div>
+          <h2 class="subtitle has-text-centered">
+            所提出的框架联合优化多物理场性能与可制造性，生成具有连通承载路径和可进入排粉通道的晶格结构。
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">摘要</h2>
+            <div class="content has-text-justified">
+              <p>
+                晶格超材料为轻量化和多功能结构设计提供了重要基础，而增材制造使复杂晶格几何的制备成为可能。然而，面向增材制造的多物理场晶格单元设计仍面临挑战：力学与热学目标天然存在冲突，可制造性约束（包括悬垂、封闭腔体和受限排粉通道）会显著压缩可行设计空间。本文提出一种面向可制造性的晶格优化方法，将可微形式的制造约束嵌入逆均匀化拓扑优化框架，在同一优化过程中联合考虑多物理场性能与可制造性。进一步提出渐进式帕累托前沿构建机制。目标性能条件化的密度生成网络对相邻非支配解的潜在表示进行插值，并将其解码为用于优化的初始密度场。通过迭代更新网络和非支配解集，逐步提升可制造非支配解的覆盖范围。实验表明，该方法能够捕捉多物理场权衡，显著降低制造风险，并高效生成可制造的非支配设计。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3 has-text-centered">结果</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img src="static/images/result-1-ZH.png" alt="随机初始化与网络初始化的帕累托前沿对比" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                优化得到的晶格揭示了由体积分数决定的刚度—导热率权衡：更高的体积分数可增强承载与导热路径，但会压缩排粉空间。
+              </h2>
+            </div>
+            <div class="item">
+              <img src="static/images/result-2-ZH.png" alt="有无增材制造约束时的性能空间对比" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                在相同优化预算下，网络初始化构建出的非支配前沿质量优于随机初始化。
+              </h2>
+            </div>
+            <div class="item">
+              <img src="static/images/result-3-ZH.png" alt="性能空间与可制造性指标的对比" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                制造约束压缩了可达到的性能空间，同时将候选设计引导至更符合实际增材制造要求的区域。
+              </h2>
+            </div>
+            <div class="item result-photo">
+              <img src="static/images/result-4-ZH.png" alt="采用制造约束优化的金属晶格打印件" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                考虑制造约束的金属打印件呈现出连通良好的实体网络和开放的孔道。
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">文献引用（BibTeX）</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="复制 BibTeX">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">复制</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{xingTBDlattice,
+  title={Lattice Structure Optimization for Additive Manufacturing:
+         Manufacturability-Driven Design and Pareto Front Construction},
+  author={Xing, Yu and Liu, Yang and Lu, Lin},
+  journal={Journal of Computer-Aided Design \&amp; Computer Graphics},
+  year={TBD},
+  doi={10.3724/SP.J.1089.2026-00157},
+  url={https://www.jcad.cn/article/doi/10.3724/SP.J.1089.2026-00157}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              本页面基于 <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a> 构建，模板源自 <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> 项目页面。
+              你可以自由使用本网站的源代码，但请保留指向模板的链接。<br>
+              本网站采用 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">知识共享署名—相同方式共享 4.0 国际许可协议</a>。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

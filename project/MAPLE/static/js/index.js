@@ -11,15 +11,17 @@ function copyBibTeX() {
   const bibtexElement = document.getElementById('bibtex-code');
   const button = document.querySelector('.copy-bibtex-btn');
   const copyText = button.querySelector('.copy-text');
+  const isChinesePage = document.documentElement.lang.toLowerCase().startsWith('zh');
+  const copyLabels = isChinesePage ? { copied: '已复制！', copy: '复制' } : { copied: 'Copied!', copy: 'Copy' };
 
   if (!bibtexElement) return;
 
   const showCopiedState = function() {
     button.classList.add('copied');
-    copyText.textContent = 'Copied!';
+    copyText.textContent = copyLabels.copied;
     setTimeout(function() {
       button.classList.remove('copied');
-      copyText.textContent = 'Copy';
+      copyText.textContent = copyLabels.copy;
     }, 2000);
   };
 
